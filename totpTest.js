@@ -1,3 +1,9 @@
+/**
+ * TOTP tester. 
+ * 
+ * Usage: node totpTest.js [KEY] 
+ * Where Key is the TOTP key. If Key is not supplied, then a random key is used.
+ */
 const totp = require("./totp.js");
 const qrcode = require("qrcode");
 const fs = require("fs");
