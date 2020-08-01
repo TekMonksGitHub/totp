@@ -4,16 +4,18 @@
  * Usage: node totpTest.js [KEY] [TOKEN]
  * Where Key is the TOTP key. If Key is not supplied, then a random key is used.
  */
-const totp = require("./totp.js");
-const qrcode = require("qrcode");
 const fs = require("fs");
+const qrcode = require("qrcode");
+const totp = require("./totp.js");
 
 main();
 function main() {
+    const args = process.argv.slice(2);
+    if (!args[0]) console.log("Usage: node totpTest.js [Optional: KEY] [Optional: TOKEN]\n");
+
     const secret = totp.getSecret();
     console.log(`Secret: ${secret}`);
 
-    const args = process.argv.slice(2);
     const token = totp.getTOTP(args[0]||secret);
     console.log(`Token: ${token}`);
 
