@@ -9,8 +9,6 @@ const qrcode = require("qrcode");
 const fs = require("fs");
 
 main();
-
-
 function main() {
     const secret = totp.getSecret();
     console.log(`Secret: ${secret}`);
