@@ -48,7 +48,7 @@ function getTOTP(secret, duration=30, algorithm="sha1", digits=6, time0=0) {
  */
 function verifyTOTP(secret, token, historicalWindows=1, duration=30, algorithm="sha1") {
     const totpDigits = token.toString(10).length;
-    for (let n = 0; n < historicalWindows; n++) if (getTOTP(secret, duration, algorithm, totpDigits, n) == token) 
+    for (let n = 0; n <= historicalWindows; n++) if (getTOTP(secret, duration, algorithm, totpDigits, n*duration) == token) 
         return true;
 
     return false;

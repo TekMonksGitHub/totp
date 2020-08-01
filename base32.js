@@ -3,7 +3,7 @@
  * Copyright (C) 2016-2017 Linus Unnebäck
  * (C) 2020 TekMonks
  * 
- * Base 32 encoder/decoder for Node.js. Takes in buffer and outputs 32 encoded
+ * Base 32 encoder/decoder for Node.js. Takes in buffer and outputs BASE32 encoded
  * text or inverse.
  * 
  * Original code and license at
